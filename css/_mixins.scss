@@ -1,0 +1,57 @@
+@mixin button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: min(3.13vw, 60px);
+  margin-right: min(.26vw, 5px);
+  padding: min(.26vw, 5px);
+  outline: none;
+  background-color: #c2ab81;
+  transition: background-color .3s ease-in-out;
+  transform: skewX(-17deg);
+
+  &:not(:last-child) {
+    margin-bottom: min(.26vw, 5px);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: max(-.52vw, -10px);
+    width: min(.31vw, 6px);
+    height: 100%;
+    background-color: #ffffff;
+    transition: transform .5s ease-in-out;
+  }
+}
+
+@mixin btn_span {
+  display: block;
+  font-size: min(.63vw, 12px);
+  font-weight: 700;
+  line-height: 150%;
+  color: #ffffff;
+  text-transform: uppercase;
+  transform: skewX(17deg);
+}
+
+@mixin btn-tel {
+  outline: none;
+  transition: border .3s ease-in-out;
+
+  &:focus:not(:hover) {
+    border-color: darkorchid;
+  }
+
+  &:active {
+    border-color: darkmagenta;
+  }
+}
+
+@mixin back-img {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}

@@ -1,0 +1,289 @@
+
+@import "normalize";
+
+@import "mixins";
+
+@import "settings";
+
+.container {
+  padding-inline: min(5.21vw, 100px);
+}
+
+.header {
+  &__container {
+    align-items: center;
+    justify-content: space-between;
+
+    padding-block: min(1.46vw, 28px);
+  }
+
+  &__logoBlock {
+    width: min(8.13vw, 156px);
+    height: min(3.13vw, 60px);
+    margin-right: min(4.06vw, 78px);
+  }
+
+  &__logoImg {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+  }
+
+  &__button {
+    @include button;
+    width: min(13.96vw, 268px);
+  }
+
+  &__btnTxt {
+    @include btn_span;
+  }
+
+  &__tel {
+    @include btn-tel;
+    position: relative;
+    display: block;
+    width: min(3.91vw, 75px);
+    height: min(3.28vw, 63px);
+    margin-right: min(1.41vw, 27px);
+    margin-bottom: min(.26vw, 5px);
+    border: 1px solid #ffffff;
+    transform: skew(-17deg, 0);
+
+    &::after {
+      @include back-img;
+      content: "";
+      position: absolute;
+      top: 15%;
+      left: 25%;
+      width: min(2.08vw, 40px);
+      height: min(2.08vw, 40px);
+      opacity: 50%;
+      background-image: url(../img/tel.svg);
+      transform: skew(20deg, 0);
+    }
+
+    &:first-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.nav {
+  max-width: min(43.13vw, 828px);
+  margin-right: min(13.65vw, 262px);
+
+  &__list {
+    align-items: center;
+
+    column-gap: min(2.19vw, 42px);
+  }
+
+  &__link {
+    font-size: min(.73vw, 14px);
+    font-weight: 700;
+    line-height: min(1.09vw, 21px);
+    color: #ffffff;
+    text-transform: uppercase;
+    transition: color .3s ease-in-out;
+  }
+}
+
+.hero {
+  @include back-img;
+  min-height: calc(100vh - min(6.04vw, 116px));
+  border-radius: min(3.91vw, 75px) min(3.91vw, 75px) 0 0;
+  background-color: #171717;
+  background-image: url(../img/hero_1920.webp);
+
+  &__container {
+    position: relative;
+    align-items: flex-end;
+    justify-content: flex-start;
+    min-height: inherit;
+    padding-bottom: min(5.00vw, 96px);
+  }
+
+  &__main {
+    z-index: 1000;
+    flex-direction: column;
+    max-width: min(35.73vw, 686px);
+
+    row-gap: min(2.08vw, 40px);
+  }
+
+  &__gradient {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, #131313 0%, rgba(19, 19, 19, 0) 30%);
+
+    inset: 0;
+  }
+
+  &__title {
+    font-size: min(2.19vw, 42px);
+    font-weight: 700;
+    line-height: min(2.66vw, 51px);
+    color: #ffffff;
+    text-transform: uppercase;
+  }
+
+  &__descr {
+    font-size: min(.83vw, 16px);
+    font-weight: 400;
+    line-height: min(1.25vw, 24px);
+    color: #ffffff;
+  }
+
+  &__button {
+    @include button;
+    width: min(13.96vw, 268px);
+  }
+
+  &__btnTxt {
+    @include btn_span;
+  }
+}
+
+.cards {
+  padding-top: min(6.98vw, 134px);
+  padding-bottom: min(13.33vw, 256px);
+  background-color: #131313;
+
+  &__title {
+    margin-bottom: min(2.76vw, 53px);
+    font-size: min(2.19vw, 42px);
+    font-weight: 700;
+    line-height: min(2.66vw, 51px);
+    color: #ffffff;
+    text-transform: uppercase;
+  }
+
+  &__main {
+    margin-bottom: min(3.13vw, 60px);
+  }
+
+  &__button {
+    @include button;
+    width: min(13.96vw, 268px);
+    margin: 0 auto;
+  }
+
+  &__btnTxt {
+    @include btn_span;
+  }
+
+  &__main {
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto;
+    gap: min(1.56vw, 30px);
+  }
+
+  &__imgBlock {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: min(9.64vw, 185px);
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+  }
+
+  &__item {
+    position: relative;
+    max-width: min(16.67vw, 320px);
+    background-color: #ffffff;
+  }
+
+  &__title {
+    margin-bottom: min(1.04vw, 20px);
+    font-family: "Mulish";
+    font-size: min(.73vw, 14px);
+    font-weight: 700;
+    line-height: min(1.35vw, 26px);
+    color: #171717;
+    text-transform: uppercase;
+  }
+
+  &__descrBlock {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: calc(100% - min(11.20vw, 215px));
+    padding: min(11.20vw, 215px) min(1.20vw, 23px) min(1.56vw, 30px) min(1.20vw, 23px);
+  }
+
+  &__descr {
+    margin-bottom: min(1.04vw, 20px);
+    font-size: min(.83vw, 16px);
+    font-weight: 400;
+    line-height: min(1.35vw, 26px);
+    color: #171717;
+  }
+
+  &__txt {
+    margin-bottom: min(1.04vw, 20px);
+    font-size: min(.73vw, 14px);
+    font-weight: 400;
+    line-height: min(1.25vw, 24px);
+    color: #666666;
+  }
+
+  &__time {
+    display: block;
+    margin-bottom: min(1.30vw, 25px);
+    font-size: min(.63vw, 12px);
+    font-weight: 400;
+    line-height: min(1.25vw, 24px);
+
+    & b {
+      font-weight: 700;
+    }
+  }
+
+  &__link {
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: auto;
+    padding: min(.83vw, 16px);
+    font-family: "Mulish";
+    font-size: min(.73vw, 14px);
+    font-weight: 600;
+    line-height: min(.94vw, 18px);
+    color: #ffffff;
+    background-color: #171717;
+    transition: background-color .3s ease-in-out;
+  }
+}
+
+@media (any-hover:hover) {
+  .header__button:hover:not(:active),
+  .hero__button:hover:not(:active),
+  .cards__button:hover:not(:active) {
+    background-color: gold;
+  }
+
+  .hero__button:hover:not(:active)::after,
+  .header__button:hover:not(:active)::after,
+  .cards__button:hover:not(:active)::after {
+    transform: rotate(360deg);
+  }
+
+  .nav__link:hover:not(:active) {
+    color: blueviolet;
+  }
+
+  .header__tel:hover:not(:active) {
+    border-color: blueviolet;
+  }
+
+  .cards__link:hover:not(:active) {
+    background-color: blueviolet;
+  }
+}
